@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="./public/favicon.png" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Rustic Minds</title>
+    <style>
+        body {
+            background-image: url(images/MindfulMoments.png); /* Replace with the actual path to your background image */
+            background-size: cover; /* This scales the image to cover the entire background */
+            background-repeat: no-repeat; /* Prevents the background image from repeating */
+            background-attachment: fixed; /* Keeps the background image fixed while scrolling */
+        }
+
+        /* Additional CSS for styling other page elements can be added here */
+
+        /* Styles for the back-to-top button */
+        #back-to-top {
+            display: none;
+            position: sticky;
+            bottom: 20px;
+            right: center; /* Adjust the right position for moving it more to the right */
+            background-color: transparent;
+            color: transparent;
+            border: none;
+            border-radius: 50%; /* Adjust the border-radius for a circular button */
+            padding: 8px 17px; /* Adjust padding for a smaller button */
+            font-size: 14px; /* Adjust font size for smaller text */
+            font-weight: bolder;
+            text-transform: uppercase;
+            cursor: pointer;
+            transition: transform 0.2s, background-color 0.2s, color 0.2s;
+        }
+
+        #back-to-top:hover {
+            background-color: #8b31dac9; /* Change background color on hover */
+            color: white; /* Change text color on hover */
+            transform: scale(1.1); /* Scale up the button on hover */
+        }
+    </style>
+</head>
+<body>
+    <div class="Heading">
+        <!-- Content for the Heading div -->
+    </div>
+    <div id="root"></div>
+
+    <!-- Back to Top button -->
+    <button id="back-to-top" onclick="scrollToTop()">Back to Top</button>
+
+    <script type="module" src="./src/main.jsx"></script>
+
+    <script>
+        // JavaScript function to scroll to the top of the page
+        function scrollToTop() {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        // Show the back-to-top button when scrolling down
+        window.onscroll = function() {
+            var button = document.getElementById('back-to-top');
+            if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+                button.style.display = 'block';
+            } else {
+                button.style.display = 'none';
+            }
+        }
+    </script>
+</body>
+</html>
